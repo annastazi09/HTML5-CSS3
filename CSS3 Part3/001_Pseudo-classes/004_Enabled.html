@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>enabled</title>
+    <script>
+        window.onload = function () {
+
+            var check = document.getElementById("check");
+			var btn = document.getElementById("btn");
+
+            check.onclick = function () {
+                var sbmt = document.getElementById('form1');
+
+                if (check.checked) {
+                    // переводим элемент формы в активное состояние.
+                    btn.disabled = false;
+                }
+                else {
+                    btn.disabled = true;
+                }
+
+            }
+        }
+    </script>
+
+    <style>
+        /* :enabled - псевдоклаcс для получения доступных элементов форм (по умолчанию элементы форм enabled) */
+        input:enabled {
+            background: lightgreen;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1">
+        <p>
+            <input type="checkbox" name="agree" id="check">
+            Я согласен со всеми условиями
+        </p>
+        <p>
+            <!--Изначально элемент формы не активен-->
+            <input type="button" name="button" value="Отправить" id="btn" disabled="disabled">
+        </p>
+    </form>
+</body>
+</html>
+
